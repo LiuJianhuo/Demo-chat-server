@@ -1,0 +1,82 @@
+
+var fs = require("fs");
+var path = require("path");
+var utils = require("util");
+var User = require("./modules/model/User")
+
+//console.log(utils.inspect(fs))
+console.log(path.dirname(User.DBPath))
+var userDbDir = path.dirname(User.DBPath);
+
+// fs.existsSync()
+// var data = fs.readFileSync(User.DBPath, function (err, te) {
+//     if(err){
+//         console.log(err);
+//         return;
+//     }
+//     console.log(te)
+// });
+// console.log(data.toString() =="[]");
+//User.addUser({userName:"刘键火", headPotrait:"bb.png"});
+//User.removeUser("3e0da446-035b-4f77-9c1d-0af935e7fcb0")
+
+// User.getUsers(function (err, users) {
+//     if(err){
+//         console.log(err);
+//         return;
+//     }
+//
+//     console.log(users)
+// });
+// User.addUser({userName:"new001", headPotrait:"/user/bb.png", createTime:"2018/9/1"}, function (err, result) {
+//     if(err){
+//         console.log(err)
+//         return
+//     }
+//     console.log(result.insertId)
+// })
+
+// User.updateUser(4, {
+//     userName: "004",
+//     headPortrait: "/user/004.png",
+// }, function (err, result) {
+//     if(err){
+//         console.log(err);
+//         return;
+//     }
+//     console.log(result);
+// })
+
+var UserService = require("./service/UserService")
+//
+// UserService.getContacts("eefef", function (err, results) {
+//     if(err){
+//         console.log(err)
+//     }else{
+//         var s = { a: results[0].friendTime}
+//         console.log(s)
+//         console.log(JSON.stringify(s))
+//         console.log(JSON.parse(JSON.stringify(s)))
+//         console.log(JSON.parse(JSON.stringify(results)))
+//
+//     }
+// });
+
+// var uuid = require('uuid');
+// var token = uuid.v1()
+// console.log(token.replace(/-/g,''))
+var addFriendMsg = {
+    fromUserId : '',
+    toUserId: 'addUserId',
+    requestTime : 'requestTime',
+    reason: 'reason',
+}
+// UserService.saveAddFriendMsg(addFriendMsg, function (error, msgId) {
+//     if(error){
+//         console.log(error);
+//         return;
+//     }
+//     console.log(msgId)
+// })
+
+console.log(utils.inspect(addFriendMsg))
